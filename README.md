@@ -258,6 +258,4 @@ Assurez-vous d'avoir au moins 2 GB de RAM disponibles pour Docker.
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
----
-
 ⭐️ Si cet outil vous a aidé, n'hésitez pas à lui donner une étoile !
