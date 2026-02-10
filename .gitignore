@@ -1,0 +1,38 @@
+# =========================
+# IDE / Editors
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Flutter / Dart
+# =========================
+.dart_tool/
+.packages
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Coverage
+# =========================
+coverage/
+lcov.info
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Audit reports (optionnel)
+# =========================
+rapports_audit/
