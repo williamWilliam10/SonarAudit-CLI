@@ -1,3 +1,4 @@
+```markdown
 # SonarAudit-CLI 🔍
 
 ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?logo=sonarqube&logoColor=white)
@@ -35,6 +36,7 @@ L'outil se compose de deux scripts Bash qui automatisent le déploiement de l'in
 Assurez-vous d'avoir installé les outils suivants :
 
 **Docker**
+
 ```bash
 # Installation sur Debian/Ubuntu
 sudo apt update
@@ -44,19 +46,22 @@ sudo systemctl enable docker
 ```
 
 **Curl**
+
 ```bash
 sudo apt install curl
 ```
 
 ### Récupération des scripts
 
-1. Cloner le repository
+**1.** Cloner le repository
+
 ```bash
 git clone https://github.com/williamWilliam10/SonarAudit-CLI.git
 cd SonarAudit-CLI
 ```
 
-2. Donner les permissions d'exécution
+**2.** Donner les permissions d'exécution
+
 ```bash
 chmod +x start_infra.sh
 chmod +x infra_scan.sh
@@ -64,9 +69,10 @@ chmod +x infra_scan.sh
 
 ## 🚀 Utilisation
 
-### Étape 1 : Démarrage de l'infrastructure
+### ÉTAPE 1 : Démarrage de l'infrastructure
 
 Lancez le script de démarrage de l'infrastructure SonarQube :
+
 ```bash
 ./start_infra.sh
 ```
@@ -77,101 +83,106 @@ Ce script va :
 - Attendre que les services soient complètement démarrés
 
 Une fois terminé, vous verrez le message :
+
 ```
 INFRASTRUCTURE PRÊTE : http://localhost:9000
 ```
 
-### Étape 2 : Configuration de SonarQube
+---
 
-#### 2.1 Connexion initiale
+### ÉTAPE 2 : Configuration de SonarQube
 
-1. Ouvrez votre navigateur et accédez à `http://localhost:9000`
+#### 2.1 - Connexion initiale
 
-2. Connectez-vous avec les identifiants par défaut :
-   - **Login** : `admin`
-   - **Password** : `admin`
+**1.** Ouvrez votre navigateur et accédez à `http://localhost:9000`
+
+**2.** Connectez-vous avec les identifiants par défaut :
+- **Login** : `admin`
+- **Password** : `admin`
 
 ![Connexion SonarQube](docs/images/01-login.png)
 
-#### 2.2 Changement du mot de passe
+#### 2.2 - Changement du mot de passe
 
-  -  SonarQube vous demandera de changer le mot de passe
+**3.** SonarQube vous demandera de changer le mot de passe
 
 ![Changement mot de passe](docs/images/02-change-password.png)
 
-#### 2.3 Création d'un projet
+#### 2.3 - Création d'un projet
 
-1. Cliquez sur **"Create Project"** ou **"Créer un projet"**
+**4.** Cliquez sur **"Create Project"** ou **"Créer un projet"**
 
-
-2. Remplissez les informations du projet :
-   
-   - **Display name** : `Mon Projet` (nom affiché)
+**5.** Remplissez les informations du projet :
+- **Display name** : `Mon Projet` (nom affiché)
 
 ![Configuration projet](docs/images/05-project-info.png)
 
-
-3. Méthode d'analyse : Choisissez **"Locally"** 
+**6.** Méthode d'analyse : Choisissez **"Locally"**
 
 ![Méthode manuelle](docs/images/methode.png)
 
+#### 2.4 - Génération du token
 
-#### 2.4 Génération du token
+**7.** Dans la section **"Provide a token"**, entrez un nom pour votre token (ex: `mon-token`)
 
-  -  Dans la section **"Provide a token"**, entrez un nom pour votre token (ex: `mon-token`)
+![Générer token](docs/images/06-generate-token.png)
 
-    ![Générer token](docs/images/06-generate-token.png)
+**8.** Cliquez sur **"Generate"**
 
-  -  Cliquez sur **"Generate"**
+**9.** **IMPORTANT** : Copiez et sauvegardez le token généré (vous ne pourrez plus le voir après)
 
-  - **IMPORTANT** : Copiez et sauvegardez le token généré 
+#### 2.5 - Sélection du langage
 
-
-#### 2.5 Sélection du langage
-
-1. Choisissez le langage principal de votre projet :
-   - JavaScript / TypeScript
-   - Python
-   - C / C++ / Objective-C
-   - Java
-   - C#
-   - Autres
+**10.** Choisissez le langage principal de votre projet :
+- JavaScript / TypeScript
+- Python
+- C / C++ / Objective-C
+- Java
+- C#
+- Autres
 
 ![Choix du langage](docs/images/08-select-language.png)
 
-2. Cliquez sur **"Continue"**
+**11.** Cliquez sur **"Continue"**
 
+---
 
+### ÉTAPE 3 : Lancement du scan
 
-### Étape 3 : Lancement du scan
+**12.** Copiez le fichier `infra_scan.sh` à la racine du projet à auditer
 
--  Copiez le fichier `infra_scan.sh` à la racine du projet à auditer
 ```bash
 cp infra_scan.sh /chemin/vers/votre/projet/
 cd /chemin/vers/votre/projet/
 ```
 
+**13.** Lancez le scan
 
-
--   Lancez le scan
 ```bash
 ./infra_scan.sh
 ```
-![Remplir infos ](docs/images/15-scan.png)
 
-### Étape 4 : Consultation des résultats
+Le script vous demandera les informations suivantes :
 
-- À la fin du scan, un lien sera affiché dans le terminal :
+![Remplir infos](docs/images/15-scan.png)
+
+---
+
+### ÉTAPE 4 : Consultation des résultats
+
+**14.** À la fin du scan, un lien sera affiché dans le terminal :
+
 ```
 === Analyse terminée ===
 Résultats disponibles : http://localhost:9000/dashboard?id=mon-projet
 ```
 
--  Cliquez sur le lien ou copiez-le dans votre navigateur pour consulter les résultats détaillés
+**15.** Cliquez sur le lien ou copiez-le dans votre navigateur pour consulter les résultats détaillés
 
 ![Résultats du scan](docs/images/10-results.png)
 
 ## 📂 Structure du projet
+
 ```
 SonarAudit-CLI/
 ├── start_infra.sh       # Script de démarrage de l'infrastructure
@@ -199,16 +210,19 @@ SonarAudit-CLI/
 ## 🛑 Arrêt de l'infrastructure
 
 Pour arrêter le conteneur SonarQube :
+
 ```bash
 docker stop Sonariaudit_engine
 ```
 
 Pour le supprimer complètement :
+
 ```bash
 docker rm Sonariaudit_engine
 ```
 
 Pour redémarrer un conteneur existant :
+
 ```bash
 docker start Sonariaudit_engine
 ```
@@ -218,6 +232,7 @@ docker start Sonariaudit_engine
 ### Le port 9000 est déjà utilisé
 
 Si vous avez une erreur indiquant que le port 9000 est déjà utilisé :
+
 ```bash
 # Trouvez le processus utilisant le port
 sudo lsof -i :9000
@@ -229,6 +244,7 @@ sudo lsof -i :9000
 ### SonarQube ne démarre pas
 
 Vérifiez les logs du conteneur :
+
 ```bash
 docker logs Sonariaudit_engine
 ```
@@ -246,3 +262,4 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 ---
 
 ⭐️ Si cet outil vous a aidé, n'hésitez pas à lui donner une étoile !
+```
