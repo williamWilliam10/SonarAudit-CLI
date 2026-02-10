@@ -95,44 +95,41 @@ INFRASTRUCTURE PRÊTE : http://localhost:9000
 
 #### 2.2 Changement du mot de passe
 
-3. SonarQube vous demandera de changer le mot de passe
+  -  SonarQube vous demandera de changer le mot de passe
 
 ![Changement mot de passe](docs/images/02-change-password.png)
 
 #### 2.3 Création d'un projet
 
-4. Cliquez sur **"Create Project"** ou **"Créer un projet"**
+1. Cliquez sur **"Create Project"** ou **"Créer un projet"**
 
-![Créer un projet](docs/images/03-create-project.png)
 
-5. Remplissez les informations du projet :
-   - **Project key** : `mon-projet` (identifiant unique)
+2. Remplissez les informations du projet :
+   
    - **Display name** : `Mon Projet` (nom affiché)
 
 ![Configuration projet](docs/images/05-project-info.png)
 
 
-1. Méthode d'analyse : Choisissez **"Locally"** 
+3. Méthode d'analyse : Choisissez **"Locally"** 
 
 ![Méthode manuelle](docs/images/methode.png)
 
 
-7. Cliquez sur **"Set Up"**
-
 #### 2.4 Génération du token
 
-8. Dans la section **"Provide a token"**, entrez un nom pour votre token (ex: `mon-token`)
+  -  Dans la section **"Provide a token"**, entrez un nom pour votre token (ex: `mon-token`)
 
-![Générer token](docs/images/06-generate-token.png)
+    ![Générer token](docs/images/06-generate-token.png)
 
-9. Cliquez sur **"Generate"**
+  -  Cliquez sur **"Generate"**
 
-10. **IMPORTANT** : Copiez et sauvegardez le token généré 
+  - **IMPORTANT** : Copiez et sauvegardez le token généré 
 
 
 #### 2.5 Sélection du langage
 
-11. Choisissez le langage principal de votre projet :
+1. Choisissez le langage principal de votre projet :
    - JavaScript / TypeScript
    - Python
    - C / C++ / Objective-C
@@ -142,13 +139,13 @@ INFRASTRUCTURE PRÊTE : http://localhost:9000
 
 ![Choix du langage](docs/images/08-select-language.png)
 
-12. Cliquez sur **"Continue"**
+2. Cliquez sur **"Continue"**
 
 
 
 ### Étape 3 : Lancement du scan
 
-13. Copiez le fichier `infra_scan.sh` à la racine du projet à auditer
+-  Copiez le fichier `infra_scan.sh` à la racine du projet à auditer
 ```bash
 cp infra_scan.sh /chemin/vers/votre/projet/
 cd /chemin/vers/votre/projet/
@@ -156,7 +153,7 @@ cd /chemin/vers/votre/projet/
 
 
 
-15.  Lancez le scan
+-   Lancez le scan
 ```bash
 ./infra_scan.sh
 ```
@@ -164,13 +161,13 @@ cd /chemin/vers/votre/projet/
 
 ### Étape 4 : Consultation des résultats
 
-16. À la fin du scan, un lien sera affiché dans le terminal :
+- À la fin du scan, un lien sera affiché dans le terminal :
 ```
 === Analyse terminée ===
 Résultats disponibles : http://localhost:9000/dashboard?id=mon-projet
 ```
 
-17. Cliquez sur le lien ou copiez-le dans votre navigateur pour consulter les résultats détaillés
+-  Cliquez sur le lien ou copiez-le dans votre navigateur pour consulter les résultats détaillés
 
 ![Résultats du scan](docs/images/10-results.png)
 
