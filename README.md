@@ -1,4 +1,3 @@
-```markdown
 # SonarAudit-CLI 🔍
 
 ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?logo=sonarqube&logoColor=white)
@@ -53,14 +52,14 @@ sudo apt install curl
 
 ### Récupération des scripts
 
-**1.** Cloner le repository
+• Cloner le repository
 
 ```bash
 git clone https://github.com/williamWilliam10/SonarAudit-CLI.git
 cd SonarAudit-CLI
 ```
 
-**2.** Donner les permissions d'exécution
+• Donner les permissions d'exécution
 
 ```bash
 chmod +x start_infra.sh
@@ -94,9 +93,9 @@ INFRASTRUCTURE PRÊTE : http://localhost:9000
 
 #### 2.1 - Connexion initiale
 
-**1.** Ouvrez votre navigateur et accédez à `http://localhost:9000`
+• Ouvrez votre navigateur et accédez à `http://localhost:9000`
 
-**2.** Connectez-vous avec les identifiants par défaut :
+• Connectez-vous avec les identifiants par défaut :
 - **Login** : `admin`
 - **Password** : `admin`
 
@@ -104,36 +103,36 @@ INFRASTRUCTURE PRÊTE : http://localhost:9000
 
 #### 2.2 - Changement du mot de passe
 
-**3.** SonarQube vous demandera de changer le mot de passe
+• SonarQube vous demandera de changer le mot de passe
 
 ![Changement mot de passe](docs/images/02-change-password.png)
 
 #### 2.3 - Création d'un projet
 
-**4.** Cliquez sur **"Create Project"** ou **"Créer un projet"**
+• Cliquez sur **"Create Project"** ou **"Créer un projet"**
 
-**5.** Remplissez les informations du projet :
+• Remplissez les informations du projet :
 - **Display name** : `Mon Projet` (nom affiché)
 
 ![Configuration projet](docs/images/05-project-info.png)
 
-**6.** Méthode d'analyse : Choisissez **"Locally"**
+• Méthode d'analyse : Choisissez **"Locally"**
 
 ![Méthode manuelle](docs/images/methode.png)
 
 #### 2.4 - Génération du token
 
-**7.** Dans la section **"Provide a token"**, entrez un nom pour votre token (ex: `mon-token`)
+• Dans la section **"Provide a token"**, entrez un nom pour votre token (ex: `mon-token`)
 
 ![Générer token](docs/images/06-generate-token.png)
 
-**8.** Cliquez sur **"Generate"**
+• Cliquez sur **"Generate"**
 
-**9.** **IMPORTANT** : Copiez et sauvegardez le token généré (vous ne pourrez plus le voir après)
+• **IMPORTANT** : Copiez et sauvegardez le token généré (vous ne pourrez plus le voir après)
 
 #### 2.5 - Sélection du langage
 
-**10.** Choisissez le langage principal de votre projet :
+• Choisissez le langage principal de votre projet :
 - JavaScript / TypeScript
 - Python
 - C / C++ / Objective-C
@@ -143,20 +142,20 @@ INFRASTRUCTURE PRÊTE : http://localhost:9000
 
 ![Choix du langage](docs/images/08-select-language.png)
 
-**11.** Cliquez sur **"Continue"**
+• Cliquez sur **"Continue"**
 
 ---
 
 ### ÉTAPE 3 : Lancement du scan
 
-**12.** Copiez le fichier `infra_scan.sh` à la racine du projet à auditer
+• Copiez le fichier `infra_scan.sh` à la racine du projet à auditer
 
 ```bash
 cp infra_scan.sh /chemin/vers/votre/projet/
 cd /chemin/vers/votre/projet/
 ```
 
-**13.** Lancez le scan
+• Lancez le scan
 
 ```bash
 ./infra_scan.sh
@@ -170,14 +169,14 @@ Le script vous demandera les informations suivantes :
 
 ### ÉTAPE 4 : Consultation des résultats
 
-**14.** À la fin du scan, un lien sera affiché dans le terminal :
+• À la fin du scan, un lien sera affiché dans le terminal :
 
 ```
 === Analyse terminée ===
 Résultats disponibles : http://localhost:9000/dashboard?id=mon-projet
 ```
 
-**15.** Cliquez sur le lien ou copiez-le dans votre navigateur pour consulter les résultats détaillés
+• Cliquez sur le lien ou copiez-le dans votre navigateur pour consulter les résultats détaillés
 
 ![Résultats du scan](docs/images/10-results.png)
 
@@ -262,3 +261,4 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 ---
 
 ⭐️ Si cet outil vous a aidé, n'hésitez pas à lui donner une étoile !
+```
